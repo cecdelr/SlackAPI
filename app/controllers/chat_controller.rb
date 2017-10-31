@@ -6,7 +6,10 @@ class ChatController < ApplicationController
   def new
     @channel = params[:channel]
     if !@channel
+      flash[:status] = :failure
       redirect_to root_path
+    else
+      flash[:status] = :success
     end
   end
 
@@ -15,8 +18,10 @@ class ChatController < ApplicationController
     channel = params[:channel]
 
     if SlackApiWrapper.send_message(channel, msg)
+      flash[:status] = :success
       redirect_to root_path
     else
+      flash[:status] = :failure
       render :new
     end
   end

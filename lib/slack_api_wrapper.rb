@@ -5,8 +5,9 @@ class SlackApiWrapper
   BASE_URL = "https://slack.com/api/"
   TOKEN = ENV["SLACK_TOKEN"]
 
-  def self.list_channels
-    url = BASE_URL + "channels.list?token=#{TOKEN}" + "&exclude_archived=1" # 1 = true, 0 = false
+  def self.list_channels(token = nil)
+    token ||= TOKEN # For testing
+    url = BASE_URL + "channels.list?token=#{token}" + "&exclude_archived=1" # 1 = true, 0 = false
 
     data = HTTParty.get(url)
 
@@ -42,6 +43,6 @@ class SlackApiWrapper
                              :headers => { 'Content-Type' => "application/x-www-form-urlencoded"}
     )
 
-    return response.success?
+    return response["ok"]
   end
 end

@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage?token=<SLACK_TOKEN>
+    body:
+      encoding: UTF-8
+      string: text=boot%20boot&channel=test-api-channel&username=Poop%20Bot&icon_emoji=%3Ahankey%3A&as_user=false
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '315'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Tue, 31 Oct 2017 21:16:08 GMT
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - chat:write:bot,post
+      X-Content-Type-Options:
+      - nosniff
+      X-Oauth-Scopes:
+      - identify,read,post,client,apps
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - d79f1fe9-fd93-4699-a9f0-bad2c7df4e9d
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 dc553909528b8b63475c922dc07d8ba6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - eSfi_tTdOJa1v4Bw_ELtBpa73C07eiO7eonFaXO9G7jAA5rrmVS4XQ==
+    body:
+      encoding: UTF-8
+      string: '{"ok":true,"channel":"C7PQB5HGB","ts":"1509484568.000054","message":{"text":"boot
+        boot","username":"Poop Bot","icons":{"emoji":":hankey:","image_64":"https:\/\/a.slack-edge.com\/f5d6f\/img\/emoji_2016_06_08\/apple\/1f4a9.png"},"bot_id":"B7S5ZBGEP","type":"message","subtype":"bot_message","ts":"1509484568.000054"}}'
+    http_version: 
+  recorded_at: Tue, 31 Oct 2017 21:16:08 GMT
+recorded_with: VCR 3.0.3
